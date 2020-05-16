@@ -1,0 +1,25 @@
+# Run time analysis: Unscramble Computer Science Problems
+
+## Task 0
+Time Complexity: O(1)
+Description: Input does not affect run time
+
+
+## Task 1
+Time Complexity: O(n)
+Description: Two lists are looped through once each
+
+
+## Task 2
+Time Complexity: O(n)
+Description: List is looped through once
+
+
+## Task 3
+Time Complexity: O(n+nlogn)
+Description: For loop and python sort
+
+
+## Task 4
+Time Complexity: O(n+nlogn)
+Description: For loop and python sort

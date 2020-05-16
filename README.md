@@ -1,2 +1,2 @@
-# data-structure-and-algorithms-nanodegree
+# Data Structures & Algorithms Nanodegree Program
 Data Structures &amp; Algorithms Nanodegree Program

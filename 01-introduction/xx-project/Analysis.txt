@@ -1,25 +1,36 @@
 # Run time analysis: Unscramble Computer Science Problems
 
 ## Task 0
-Time Complexity: O(1)
-Description: Input does not affect run time
+Time Complexity: O(1) since access on a Python array has O(1)
+Description:
+- Only accessing the 2 elements directory from the lists
 
 
 ## Task 1
 Time Complexity: O(n)
-Description: Two lists are looped through once each
+Description: 
+- Two lists are looped through once each.
+- Then each list item is added to a set if it is unique ( hashing ) which on average is an O(1) operation.
 
 
 ## Task 2
 Time Complexity: O(n)
-Description: List is looped through once
+Description: 
+- List is looped through once.
+- Using a dictionary, the cost of adding an element is on average  O(1) for a hashmap (using the `.get` method).
+- To obtain the max of the of the dictionary is at most O(n).
+- Thus, overal time Complexity is O(N)
 
 
 ## Task 3
 Time Complexity: O(n+nlogn)
-Description: For loop and python sort
+Description: 
+- O(n log n) list sorting operation 
+- full scan through the list - O( n)
 
 
 ## Task 4
 Time Complexity: O(n+nlogn)
 Description: For loop and python sort
+- Four set add operations that scans the list to add - O(n)
+- O(n log n ) for sorting

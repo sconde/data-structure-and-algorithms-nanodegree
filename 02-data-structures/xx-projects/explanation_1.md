@@ -1,11 +1,10 @@
 # Problem 1: Explanation
 
-For the __LRU_Cache__ problem, after thinking of using different approaches (included previous failures), it has been decided to use the __OrderedDict()__, specifically the use of the _method_ __.popitem(last=False)__. 
-It allows to  remove the _first added element_, which is basic for the __priority construction__ demanded. 
+- `Hashtable` - offers constant lookup time
+- dict maintains order only from python 3.6
+- The time complexity for both `get` and `put` be __O(1)__ -- no loops, constant time
+- Space complexity of `get` is __O(1)__, of `put` is __O(n)__
 
+## Reference 
 
-## Time/Space complexity
-
-In respects to the limitation of the _cache_, any hashing approach has been discarded, as the __risk of collision__,  hence the necessity of adding a __nested hash__ (reaching __O(n)__). 
-Finally deciding for this approach that satisfies the __O(1)__ requirement. 
-As in therms of _space complexity_, the structure requires the usage of __c__, being __c__ the desired *LRU_Cache* capacity; being it in the end assimilable to __O(n)__.
+- [Leetcode: Python3 using dict - no linked list](https://leetcode.com/problems/lru-cache/discuss/225231/python3-solution-using-dict-beats-100-no-linked-list#:~:text=By%20using%20dict%20you%20can,complexity%20is%20O(1).)

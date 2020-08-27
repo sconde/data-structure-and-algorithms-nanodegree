@@ -24,9 +24,9 @@ def find_files(suffix, path):
     if suffix == "" or len(os.listdir(path)) == 0:
         return []
 
-    elements = os.listdir(path)
-    files = [f for f in elements if '.'+suffix in f]
-    folders = [f for f in elements if '.' not in f]
+    path_content = os.listdir(path)
+    files = [file for file in path_content if file.endswith(f'.{suffix}')]
+    folders = [f for f in path_content if os.path.isdir(f'{path}/{f}')]
 
     for folder in folders:
         files.extend(

@@ -2,19 +2,20 @@
 Problem 4: Active Directory
 """
 
+
 class Group(object):
 
     def __init__(self, name):
         self.name = name
-        self.groups = []
-        self.users = []
+        self.groups = set()
+        self.users = set()
 
     def add_group(self, group):
-        self.groups.append(group)
+        self.groups.add(group)
 
     def add_user(self, user):
-        self.users.append(user)
-    
+        self.users.add(user)
+
     def get_groups(self):
         return self.groups
 
@@ -24,46 +25,47 @@ class Group(object):
     def get_name(self):
         return self.name
 
+
 def is_user_in_group(user, group):
-    
+
+    if not isinstance(group, Group):
+        raise AttributeError("Invalid group")
+
     if user in group.get_users():
         return True
-    
-    if len(group.get_groups()) == 0:
-        return False
 
     for grp in group.get_groups():
-        if is_user_in_group(user, grp):
-            return True
+        return is_user_in_group(user, grp)
 
     return False
 
-if __name__ == "__main__":
-        
-    #%% Testing official
-    # Testing preparation
-    parent = Group("parent")
-    child = Group("child")
-    sub_child = Group("subchild")
 
-    sub_child_user = "sub_child_user"
-    sub_child.add_user(sub_child_user)
+parent = Group("parent")
+child = Group("child")
+sub_child = Group("subchild")
 
-    child.add_group(sub_child)
-    parent.add_group(child)
+sub_child_user = "sub_child_user"
+sub_child.add_user(sub_child_user)
+child_user = "child_user"
+child.add_user(child_user)
 
-    # Normal Cases:
-    print('Normal Cases:')
-    print(is_user_in_group(user='parent_user', group=parent))
-    # False
-    print(is_user_in_group(user='child_user', group=parent))
-    # False
-    print(is_user_in_group(user='sub_child_user', group=parent), '\n')
-    # True
+child.add_group(sub_child)
+parent.add_group(child)
 
-    # Edge Cases:
-    print('Edge Cases:')
-    print(is_user_in_group(user='', group=parent))
-    # False
-    print(is_user_in_group(user='', group=child))
-    # False
+# Test Case
+answer = is_user_in_group("sub_child_user", parent)
+print(answer)
+# True
+
+answer = is_user_in_group("sub_child_user", child)
+print(answer)
+# True
+
+answer = is_user_in_group("a_child", parent)
+print(answer)
+# False
+
+answer = is_user_in_group("child_user", parent)
+print(answer)
+# True
+

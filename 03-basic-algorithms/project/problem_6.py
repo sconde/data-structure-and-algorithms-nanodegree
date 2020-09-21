@@ -19,6 +19,9 @@ def get_min_max(ints):
     """
 
     n = len(ints)
+    if n == 0:
+        return (None, None)
+
     low, high = ints[0], ints[1]
     if low > high:
         high, low = low, high
@@ -38,3 +41,7 @@ l = [i for i in range(0, 10)]  # a list containing 0 - 9
 random.shuffle(l)
 
 print ("Pass" if ((0, 9) == get_min_max(l)) else "Fail")
+
+# edge case
+print ("Pass" if ((None, None) == get_min_max([])) else "Fail")
+print ("Pass" if ((0, 0) == get_min_max([0 for _ in range(0, 10)])) else "Fail")

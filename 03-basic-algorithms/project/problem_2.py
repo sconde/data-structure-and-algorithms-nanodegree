@@ -68,3 +68,10 @@ test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+
+# edge case
+test_function([[], 10])
+test_function([[1], 1])
+test_function([[1], 0])
+test_function([list(range(0, 15)), 5])
+

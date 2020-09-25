@@ -17,12 +17,14 @@ def shortest_path(M, start, goal):
     path_queue = PriorityQueue()
     path_queue.put(start, 0)
 
+
     prev = {start: None}
     scores = {start: 0}
 
     while not path_queue.empty():
 
         current = path_queue.get()
+
         if current == goal:
             get_path(prev, start, goal)
 
@@ -30,7 +32,10 @@ def shortest_path(M, start, goal):
             x = M.intersections[current]
             y = M.intersections[node]
             this_score = scores[current] + math.sqrt((y[0] - x[0]) ** 2 + (y[1] - x[1]) ** 2)
-            path_queue.put(node, this_score)
-            prev[node] = current
+
+            if node not in scores or this_score < scores[node]:
+                scores[node] = this_score
+                path_queue.put(node, this_score)
+                prev[node] = current
 
     return get_path(prev, start, goal)

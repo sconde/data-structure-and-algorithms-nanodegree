@@ -1,4 +1,14 @@
 # Problem 7: Request Routing in a Web Server with a Trie
 
-Time complexity: __O(n)__ since we have to traverse the children to find the path.
-Space complexity: __O(n)__ as we have to split and store the individual parts of the strings and a new `TrieNode` is created for each part of the path in adding a handler method. The space complexity in the lookup is __O(1)__
+## method: add handler
+    
+Time complexity: __O(n)__ since I looped through each part of the path
+
+Space complexity: __(n)__ for a new `TrieNode` is created for each part of the path
+
+## method: lookup
+    
+Time complexity: __O(n)__ since I looped through each part
+
+Space complexity: __(1)__ as I don't use additonal memory
+

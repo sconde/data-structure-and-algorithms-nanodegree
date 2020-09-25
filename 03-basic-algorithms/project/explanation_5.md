@@ -1,4 +1,21 @@
 # Problem 5: Autocomplete with Tries
 
-Time complexity: __O(n)__ as the time is proportional to the length of the string prefix supplied.
-Space complexity: __O(n)__ for both insertion and finding the words where __n__ is the number of nodes.
+## method: find
+    
+Time complexity: __O(n)__ since I looped through each character
+
+Space complexity: __(1)__ as I don't use additonal memory
+
+## method: insert
+    
+Time complexity:  __O(n)__ since I looped through each character
+
+Space complexity: __O(n)__ for the characters length to be allocated
+
+
+## method: suffixes
+    
+Time complexity: __O(n)__ since I looped through each character
+
+Space complexity: __(1)__ as I don't use additonal memory
+

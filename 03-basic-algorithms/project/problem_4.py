@@ -24,27 +24,22 @@ def sort_012(input_list):
        input_list(list): List to be sorted
     """
 
-    count0, count1, count2 = 0, 0, 0
-    output_list = []
-
-    for num in input_list:
-        if num == 0:
-            count0 += 1
-        elif num == 1:
-            count1 += 1
+    index_0, index_2 = 0, len(input_list)-1
+    i = 0
+    while i <= index_2:
+        val = input_list[i]
+        if val == 0:
+            input_list[i], input_list[index_0] = input_list[index_0], val
+            index_0 += 1
+            i += 1
+        elif val == 2:
+            input_list[i], input_list[index_2] = input_list[index_2], val
+            index_2 -= 1
         else:
-            count2 += 1
+            i += 1
 
-    for _ in range(0, count0):
-        output_list.append(0)
+    return input_list
 
-    for _ in range(0, count1):
-        output_list.append(1)
-
-    for _ in range(0, count2):
-        output_list.append(2)
-
-    return output_list
 
 
 def test_function(test_case):

@@ -4,3 +4,12 @@ This is a 3-way partitioning problem. I first traverse the list to count the num
 
 Time complexity: __O(n)__ since I'm only looping through the array twice.
 Space complexity: __O(n)__ as I have used another list to store the result. If I can change the input list and return it as a result, I would not need to construct the `output_list` and I can do the sorting in place which would result in a __O(1)__ space complexity.
+
+
+## second implementation
+
+I simply move 0 and 2 around, and by default, 1 will be in the right place in the end.
+
+Time complexity: __O(n)__ since I'm looking through the array once.
+
+Space complexity: __(1)__ as the sorting is done in place.
